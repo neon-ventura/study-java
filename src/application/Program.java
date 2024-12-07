@@ -4,7 +4,7 @@ package application;
 public class Program {
 
 	public static void main(String[] args) {
-		System.out.println("Delete all hehe!");
+		System.out.println("new commit in neon-notebook!");
 	}
 
 }
