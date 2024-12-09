@@ -1,17 +1,21 @@
 package application;
 
+<<<<<<< HEAD
 import java.util.Scanner;
 
 import model.entities.CreditCard;
 import model.entities.DebitCard;
 import model.entities.FormaDePagamento;
 import model.entities.Pix;
+=======
+>>>>>>> 5ffe563dc68efba87b594f766c3c0eefa287d4e1
 
 public class Program {
 	
 	static FormaDePagamento pagamento;
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 
 		Scanner in = new Scanner(System.in);
 
@@ -44,6 +48,9 @@ public class Program {
 		pagamento.pagar(quantity);
 
 		in.close();
+=======
+		System.out.println("new commit in neon-notebook now really!");
+>>>>>>> 5ffe563dc68efba87b594f766c3c0eefa287d4e1
 	}
 
 }
