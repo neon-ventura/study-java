@@ -1,41 +1,49 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.Scanner;
+
+import model.entities.CreditCard;
+import model.entities.DebitCard;
+import model.entities.FormaDePagamento;
+import model.entities.Pix;
 
 public class Program {
+	
+	static FormaDePagamento pagamento;
 
 	public static void main(String[] args) {
 
-		String path = "C:\\Users\\neon\\Documents\\in.txt";
-		FileReader fr = null;
-		BufferedReader br = null;
+		Scanner in = new Scanner(System.in);
 
-		try {
-			fr = new FileReader(path);
-			br = new BufferedReader(fr);
+		System.out.println("Payment method:");
 
-			String line = br.readLine();
+		System.out.println("1 - Pix");
+		System.out.println("2 - Credit Card");
+		System.out.println("3 - Debit Card");
 
-			while (line != null) {
-				System.out.println(line);
-				line = br.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error: " + e.getMessage());
-		} finally {
-			try {
-				if (br != null) {
-					br.close();
-				}
-				if (fr != null) {
-					fr.close();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		int method = in.nextInt();
+		if (method != 1 && method != 2 && method != 3) {
+			System.out.println("Invalid option. Please choose a valid payment method.");
+			in.close();
+			return;
 		}
+
+		System.out.print("Quantity: ");
+
+		double quantity = in.nextDouble();
+
+		if (method == 1) {
+			pagamento = new Pix();
+		} else if (method == 2) {
+			pagamento = new CreditCard();
+		} else if (method == 3) {
+			pagamento = new DebitCard();
+		}else {
+			System.out.println("Error in input!");
+		}
+		pagamento.pagar(quantity);
+
+		in.close();
 	}
 
 }
