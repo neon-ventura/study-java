@@ -24,7 +24,7 @@ public class Program {
 		
 		print.printList();
 		
-		
+		in.close();
 	}
 
 }
