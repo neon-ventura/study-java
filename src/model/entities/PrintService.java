@@ -3,12 +3,13 @@ package model.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {
-	private List<Integer> list = new ArrayList<>();
+public class PrintService<T>{
+	
+	private List<T> list = new ArrayList<>();
 	
 	public PrintService() {};
 	
-	public void addValue(int value) {
+	public void addValue(T value) {
 		list.add(value);
 	}
 	

@@ -8,7 +8,7 @@ import model.entities.PrintService;
 public class Program {
 
 	public static void main(String[] args) {
-		PrintService print = new PrintService();
+		PrintService<Integer> print = new PrintService<>();
 		
 		Scanner in = new Scanner(System.in);
 		
